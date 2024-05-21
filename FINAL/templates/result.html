@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ city }}
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ city }}</h1>
+
+<div class="{{ data.weather.cloud_picture }}">
+
+    {% for key,value in data.air.items() %}
+
+        <div class="box {{ value.color }}"><label>{{ key }}</label>
+
+        <p>{{ value.aqi }}</p>
+
+        </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
